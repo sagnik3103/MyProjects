@@ -9,28 +9,35 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 
-public class AppFrame extends JFrame implements ActionListener {
+public class AppFrame implements ActionListener {
 
     JButton compressButton;
     JButton decompressButton;
 
+    JFrame frame;
+
     AppFrame() {
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         compressButton = new JButton("Select file to be compressed");
-        compressButton.setBounds(20, 100, 200, 30);
+        compressButton.setBounds(20, 200, 200, 30);
         compressButton.addActionListener(this);
 
-
         decompressButton = new JButton("Select file to decompress");
-        decompressButton.setBounds(250, 100, 200, 30);
+        decompressButton.setBounds(750, 200, 200, 30);
         decompressButton.addActionListener(this);
 
-        this.setSize(1000, 500);
-        this.getContentPane().setBackground(Color.blue);
-        this.add(compressButton);
-        this.add(decompressButton);
-        this.setVisible(true);
+        frame = new JFrame();
+
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        frame.setSize(1000, 500);
+        frame.setLayout(null);
+        frame.setVisible(true);
+
+        frame.add(compressButton);
+        frame.add(decompressButton);
+        frame.getContentPane().setBackground(Color.DARK_GRAY);
+
     }
 
 
